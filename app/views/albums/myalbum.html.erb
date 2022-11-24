@@ -7,7 +7,7 @@
 </div>
   <div class="container mt-5">
   <h1 class="text-center fw-bold">Published Albums</h1>
-    <div class="row">  
+    <div class="row">
       <% @PublishedAlbums .each do |album| %>
         <div class="col-lg-3 mt-3 ">
           <a href="/albums/<%= album.id %>" class="text-decoration-none text-black"> 
@@ -16,7 +16,7 @@
               <div class="card-body">
               <h5 class="card-title">
                 <%= album.name %>
-              </h5>  
+              </h5>
               <h5  class="card-title">
               <%= album.tag_list %>
               </h5>
@@ -28,26 +28,26 @@
     </div>
   </div>
 <div class="container mt-5">
-<h1 class="text-center fw-bold">UnPublished Albums</h1>
-  <div class="row">  
-    <% @UnPublishedAlbums .each do |album| %>
-      <div class="col-lg-3 mt-3 ">
-        <a href="/albums/<%= album.id %>" class="text-decoration-none text-black"> 
-          <div class="card" style="width: 13rem;">
-            <%= image_tag (album.cover_image )%>
-            <div class="card-body">
-            <h5 class="card-title">
-              <%= album.name %>
-            </h5>  
-            <h5  class="card-title">
-            <%= album.tag_list %>
-            </h5>
+  <h1 class="text-center fw-bold">UnPublished Albums</h1>
+    <div class="row">
+      <% @UnPublishedAlbums .each do |album| %>
+        <div class="col-lg-3 mt-3 ">
+          <a href="/albums/<%= album.id %>" class="text-decoration-none text-black">
+            <div class="card" style="width: 13rem;">
+              <%= image_tag (album.cover_image )%>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= album.name %>
+                </h5>
+                <h5  class="card-title">
+                <%= album.tag_list %>
+                </h5>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    <% end %>
-  </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
 </div>
 
 <%= render'footer' %>

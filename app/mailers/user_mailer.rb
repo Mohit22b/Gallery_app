@@ -1,6 +1,5 @@
 class UserMailer < ApplicationMailer
   default from: 'mohit@bluebash.co'
-  
   def welcome_email
     @user = params[:user]
     mail(to: @user.email, subject: 'New Album')

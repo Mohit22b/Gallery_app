@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def index
     @q = Album.where(published: true) .ransack(params[:q])
     @albums = @q.result(distinct: true)
@@ -33,7 +33,7 @@ class AlbumsController < ApplicationController
   def edit 
     @album = Album.find(params[:id])
   end
-  
+
   def update
     @album = Album.find(params[:id])
     if @album.update (album_params)
