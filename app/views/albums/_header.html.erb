@@ -1,40 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-    <a class="navbar-brand fw-bold link-decoration-none " href="http://127.0.0.1:3000/">
-      Gallery App
-    </a>
+  <a class="navbar-brand fw-bold link-decoration-none " href="http://127.0.0.1:3000/">
+    Gallery App
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar  navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ">
-         <% if user_signed_in? %>
-
-            <li class="nav-item p-1  ">
-            <%= link_to "New Album ",new_album_path, class:'text-decoration-none text-dark' %>            
-            </li>
-
-            <li class="nav-item p-1  ">
-            <%= link_to "My Albums ", albums_myalbum_path ,class:'text-decoration-none text-dark'%>
-            </li>
-
-            <li class="nav-item p-1 ">
-            <%= link_to "Home", albums_path,class:'text-decoration-none text-dark'  %>
-            </li>
-      
-            <li class="nav-item  p-1 ">
-            <%= link_to "Logout ", destroy_user_session_path  ,  data: {
-              turbo_method: :delete,
-              turbo_confirm: "Are you sure?"                                   
-            } ,class:'text-decoration-none text-dark' %>
-        
-            <% else %>
-
-            <li class="nav-item p-1 link-decoration-none  ">
-            <%= link_to "Login" , new_user_session_path ,class:'text-decoration-none text-dark  '%>
-            </li>
-
-          <%end%>
-      </ul>
+    <ul class="navbar-nav ">
+      <% if user_signed_in? %>
+        <li class="nav-item p-1  ">
+        <%= link_to "New Album ",new_album_path, class:'text-decoration-none text-dark' %>            
+        </li>
+        <li class="nav-item p-1  ">
+        <%= link_to "My Albums ", albums_myalbum_path ,class:'text-decoration-none text-dark'%>
+        </li>
+        <li class="nav-item p-1 ">
+        <%= link_to "Home", albums_path,class:'text-decoration-none text-dark'  %>
+        </li>
+        <li class="nav-item  p-1 ">
+        <%= link_to "Logout ", destroy_user_session_path  ,  data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"                                   
+        } ,class:'text-decoration-none text-dark' %>
+      <% else %>
+        <li class="nav-item p-1 link-decoration-none  ">
+        <%= link_to "Login" , new_user_session_path ,class:'text-decoration-none text-dark  '%>
+        </li>
+      <%end%>
+    </ul>
  </div>
 </nav>

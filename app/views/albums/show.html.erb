@@ -1,12 +1,12 @@
 <%= render 'header'%>
 <div class="container mt-4 ">
-    <div class="row ">
-      <% @album.images.each do |image|%>
-        <div class="col-lg-3 mt-5">
+  <div class="row ">
+    <% @album.images.each do |image|%>
+      <div class="col-lg-3 mt-5">
         <%= image_tag (image),style: "width: 200px; display: block"%>
-        </div>
-      <%end%>
-    </div>
+      </div>
+    <%end%>
+  </div>
 <br>
     <%= link_to "Edit" , edit_album_path(@album) %><br><br>
     <%= link_to "Destroy", album_path(@album), data: {

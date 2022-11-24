@@ -3,40 +3,31 @@
   <%= form.label :name %><br>
   <%= form.text_field :name %>
   </div>
-
   <div>
   <%= form.label :description %><br>
   <%= form.text_area :description %>
   </div>
-
   <div>
   <%= form.label :published %><br>
   <%= form.check_box :published %>
   </div>
-
   <div>
   <%= form.label :allow_download %><br>
   <%= form.check_box :allow_download %>
   </div>
-
   <div>
   <%= form.label :choose_multiple_images %><br><br>
   <%= form.file_field :images, multiple:true%><br><br>
-  </div>
-  
+  </div>  
   <div>
   <%= form.label :cover_image %><br><br>
   <%= form.file_field :cover_image %><br>
   </div><br>
-
   <div>
   <%= form.label :Tags %>
   <%= form.text_field :tag_list %>
   </div><br>
-
-
   <div>
   <%= form.submit %>
-  </div>
-  
-  <% end %>
+  </div>  
+< end%>
