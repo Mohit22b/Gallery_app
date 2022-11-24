@@ -1,5 +1,4 @@
 class AlbumsController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
@@ -15,7 +14,6 @@ class AlbumsController < ApplicationController
 
   def show 
     @album = Album.find(params[:id])
-    
   end
 
   def new   
@@ -47,18 +45,16 @@ class AlbumsController < ApplicationController
 
   def destroy 
     @album = Album.find(params[:id])
-    
     @album.destroy 
     UserMailer.with(user: current_user).destroy_mail.deliver_now
     redirect_to root_path , status: :see_other
-
   end  
 
   private 
   def album_params
     params.require(:album).permit(:name,:description,:published,:allow_download, :cover_image, :tag_list, images:[] )
-
   end
+
 end
 
 

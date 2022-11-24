@@ -1,7 +1,7 @@
 class Album < ApplicationRecord
   has_many_attached :images  
   has_one_attached :cover_image
-  belongs_to :user  
+  belongs_to :user
   has_many :taggings , dependent: :destroy 
   has_many :tags, through: :taggings
 
