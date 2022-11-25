@@ -3,13 +3,13 @@
   <div class="row ">
     <% @album.images.each do |image|%>
       <div class="col-lg-3 mt-5">
-        <%= image_tag (image),style: "width: 200px; display: block"%>
+        <%= image_tag (image),style: "width: 200px; height: 200px; display: block"%>
       </div>
     <%end%>
   </div>
 <br>
   <% if user_signed_in? %>
-    <%if current_user.id == @album.user_id %>
+    <%if current_user.id == @album.user_id %> 
     <%= link_to "Edit" , edit_album_path(@album) %><br><br>
     <%= link_to "Destroy", album_path(@album), data: {
                     turbo_method: :delete,
